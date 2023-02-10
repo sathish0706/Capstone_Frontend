@@ -140,7 +140,7 @@ function Login() {
           <br />
         </form>
 
-        <Link to={"/signup"}>Allready have an account? Signin</Link>
+        <Link to={"/login"}>Allready have an account? Signin</Link>
       </div>
     </div>
   );

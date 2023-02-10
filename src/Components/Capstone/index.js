@@ -11,7 +11,7 @@ const Capstone = () => {
   const navigate = useNavigate();
 
   const getCapstone = async () => {
-    var response = await axios.get("http://localhost:4000/api/get/capstone");
+    var response = await axios.get("https://capstone-project-ejyp.onrender.com/api/get/capstone");
     console.log(response);
     setCapstone(response.data);
   };

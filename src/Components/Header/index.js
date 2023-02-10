@@ -28,7 +28,7 @@ const Header = () => {
         </div>
         <div className="main-content">
           <div className="main">Query</div>
-          <div className="main" onClick={() => navigate("capstone")}>
+          <div className="main" onClick={() => navigate("/capstone")}>
             Capstone
           </div>
           <div className="main" onClick={handleLogout}>

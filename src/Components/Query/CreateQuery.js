@@ -36,7 +36,7 @@ function CreateQuery() {
       );
       if (res) {
         console.log(res);
-        navigate("/");
+        navigate("/query");
       }
 
       console.log(res);

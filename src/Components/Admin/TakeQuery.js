@@ -37,6 +37,9 @@ const TakeQuery = () => {
 
           <h3>Name :{detail.name}</h3>
           <h3>Number :{detail.mobileNumber}</h3>
+          <h3>Tittle :{detail.queryTitle}</h3>
+          <h3>Description :{detail.queryDescription}</h3>
+          <h3>creates At :{detail.createdAt}</h3>
         </div>
       </div>
     </>

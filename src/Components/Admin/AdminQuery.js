@@ -3,7 +3,7 @@ import UserContext from "../../Context";
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
-  const { queryDetails } = useContext(UserContext);
+  const { queryDetails, user } = useContext(UserContext);
   const navigate = useNavigate();
 
   return (
@@ -24,7 +24,7 @@ const Admin = () => {
       </div>
       <div className="Header">
         <h3>Queries</h3>
-        <i className="fa-solid fa-user"></i>
+        <i className="fa-solid fa-user">{user.name}</i>
       </div>
       {queryDetails === []
         ? "Loading"

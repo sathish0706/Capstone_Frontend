@@ -6,12 +6,9 @@ const UseFindUser = () => {
 
   async function getUser() {
     try {
-      const response = await axios.get(
-        "https://capstone-project-ejyp.onrender.com/api/user",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get('https://capstone-project-ejyp.onrender.com/api/user', {
+        withCredentials: true,
+      });
       if (response.data.success) {
         console.log(response.data.success);
         setUser(response.data.user);

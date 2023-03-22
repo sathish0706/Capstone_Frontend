@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import UserContext from "../../Context";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 const Admin = () => {
   const { queryDetails, user } = useContext(UserContext);
@@ -24,7 +26,7 @@ const Admin = () => {
       </div>
       <div className="Header">
         <h3>Queries</h3>
-        <i className="fa-solid fa-user">{user.name}</i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>{user.name}</i>
       </div>
       {queryDetails === []
         ? "Loading"

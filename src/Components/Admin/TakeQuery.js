@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./admin.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import UseFindUser from "../../Hooks/UseFindUser";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 const TakeQuery = () => {
   const { id } = useParams();
   //   console.log(id);
   const [detail, seDetail] = useState("");
-  const [user] = UseFindUser();
+    const { user } = useContext(UserContext);
 
   const getDetailById = async () => {
     const res = await axios.get(
@@ -29,7 +30,7 @@ const TakeQuery = () => {
     <>
       <div className="Header">
         <h3>Queries</h3>
-        <i className="fa-solid fa-user"> {user.name}</i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}> {user.name}</i>
       </div>
       <div className="takeQuery-container">
         <div className="take-query">

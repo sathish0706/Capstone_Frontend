@@ -18,6 +18,7 @@ import AdminCapstone from "./Components/Admin/AdminCapstone";
 import CapstoneDetails from "./Components/Capstone/CapstoneDetails";
 import PrivateRoutes from "./Routes/PrivateRoutes";
 import PublicRoutes from "./Routes/PublicRoutes";
+import Profile from "./Components/Profile";
 
 function App() {
   const [user, setUser] = UseFindUser();
@@ -61,6 +62,7 @@ function App() {
             <Route path="/capstone" element={<Capstone />} />
             <Route path="/add-capstone" element={<AdminCapstone />} />
             <Route path="/capstone-details" element={<CapstoneDetails />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>
       </div>

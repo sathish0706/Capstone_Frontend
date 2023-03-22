@@ -3,9 +3,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 const CapstoneDetails = () => {
   let navigate = useNavigate();
+  const { user } = useContext(UserContext);
   const [capstone, setCapstone] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [submitDetail, setSubmitDetail] = useState({
@@ -38,7 +41,7 @@ const CapstoneDetails = () => {
     <>
       <div className="Header">
         <h3>Capstone</h3>
-        <i className="fa-solid fa-user">&nbsp;</i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>&nbsp;{user.name}</i>
       </div>
       <br />
       <Button variant="outlined" id="back" onClick={() => navigate(-1)}>

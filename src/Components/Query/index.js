@@ -16,8 +16,10 @@ const Query = () => {
     <>
       <Header />
       <div className="Header">
-        <h3>Queries</h3>
-        <i className="fa-solid fa-user">&nbsp;{user.name}</i>
+        <h3>Queries</h3> 
+    <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>
+          {user.name}
+        </i>
       </div>
       <br />
       <Button variant="outlined" id="back" onClick={() => navigate("/create")}>

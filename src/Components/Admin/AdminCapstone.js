@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import AdminHeader from "./AdminHeader";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 const AdminCapstone = () => {
   const navigate = useNavigate();
+  const { queryDetails, user } = useContext(UserContext);
 
   const [userCapstone, setUserCapstone] = useState({
     userName: "",
@@ -50,7 +53,9 @@ const AdminCapstone = () => {
       <AdminHeader />
       <div className="Header">
         <h3>Capstone</h3>
-        <i className="fa-solid fa-user"></i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>
+          {user.name}
+        </i>
       </div>
       <form onSubmit={handleSubmit}>
         <label>Student Name</label>

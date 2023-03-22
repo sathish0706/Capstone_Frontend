@@ -3,10 +3,12 @@ import axios from "axios";
 import "./capstone.css";
 import UseFindUser from "../../Hooks/UseFindUser";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 const Capstone = () => {
   const [capstone, setCapstone] = useState();
-  const [user] = UseFindUser();
+ const { user } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -24,7 +26,7 @@ const Capstone = () => {
     <div>
       <div className="Header">
         <h3>Capstone</h3>
-        <i className="fa-solid fa-user">&nbsp; {user.name}</i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>&nbsp; {user.name}</i>
       </div>
       <div>
         {capstone

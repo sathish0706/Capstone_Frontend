@@ -37,9 +37,9 @@ const Query = () => {
                     <b>{queryDetail.category}</b>
                   </section>
                   <div className="query-close">
-                    <button>close</button>
+//                     <button>close</button>
                     <br />
-                    <br />
+//                     <br />
                     <br />
                     <b>{queryDetail.createdAt}</b>
                   </div>

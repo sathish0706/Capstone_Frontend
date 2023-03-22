@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./admin.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../Context";
 
 const TakeQuery = () => {
   const { id } = useParams();
+   const navigate = useNavigate();
   //   console.log(id);
   const [detail, seDetail] = useState("");
     const { user } = useContext(UserContext);

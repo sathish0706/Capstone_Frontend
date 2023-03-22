@@ -3,12 +3,13 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import UseFindUser from "../../Hooks/UseFindUser";
+import { useContext } from "react";
+import UserContext from "../../Context";
 
 function CreateQuery() {
   const navigate = useNavigate();
 
-  const [user] = UseFindUser();
+const { user } = useContext(UserContext);
   console.log(user.mobileNumber);
 
   const [userQuery, setUserQuery] = useState({
@@ -53,7 +54,9 @@ function CreateQuery() {
     <>
       <div className="Header">
         <h3> Queries</h3>
-        <i className="fa-solid fa-user">&nbsp;{user.name}</i>
+        <i className="fa-solid fa-user" onClick={() => navigate("/profile")}>
+          {user.name}
+        </i>
       </div>
       <br />
       <Button variant="outlined" id="back" onClick={() => navigate(-1)}>
